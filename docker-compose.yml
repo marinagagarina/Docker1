@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  postgres:
+    image: postgres:12.0
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_RANDOM_ROOT_PASSWORD=yes
+      - POSTGRES_DB=app
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/tmp
+
